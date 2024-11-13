@@ -1,0 +1,17 @@
+.item {
+    background-color: #1d1d1d;
+    border-radius: 7px;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.item .item__info {
+    display: flex;
+    flex-direction: column;
+}
+
+.highlight {
+    color: #646cff;
+}

@@ -1,0 +1,58 @@
+.products {
+    display: grid;
+    gap: 15px;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+
+.products .product {
+    background-color: #1d1d1d;
+    border-radius: 7px;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Центрируем элементы по вертикали */
+    transition: transform 0.2s; /* Плавный эффект при наведении */
+}
+
+.products .product:hover {
+    transform: scale(1.05); /* Увеличение при наведении */
+}
+
+.products .product .info {
+    display: flex;
+    flex-direction: column; /* Вертикальное расположение текста */
+}
+
+.products .product .name {
+    font-weight: bold; /* Жирный шрифт для имени продукта */
+    margin-bottom: 5px; /* Отступ между именем и описанием */
+}
+
+.description {
+    color: #ccc; /* Цвет для описания продукта */
+}
+
+.products .product .price {
+    font-size: 1.2em; /* Увеличенный размер шрифта для цены */
+    color: #b4b4b4; /* Цвет для цены (можно изменить) */
+    display: grid;
+    gap: 5px;
+}
+
+.products .product .price .feedback {
+    background-color: rgb(100, 108, 255);
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3px;
+    color: white;
+    border-radius: 5px;
+}
+
+.products .product .price span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+

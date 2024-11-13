@@ -1,0 +1,83 @@
+.home__item {
+    background-color: #1d1d1d;
+    border-radius: 11px;
+    padding: 20px;
+    display: grid;
+    justify-content: center;
+    text-align: center;
+    gap: 15px;
+}
+
+.home__item .info span {
+    font-weight: 600;
+    font-size: 25px;
+}
+
+.home__item .litsey__logo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.home__item .litsey__logo img {
+    width: 250px;
+    border-radius: 30%;
+}
+
+.top__user {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.top__user:hover {
+    transition: 0.35s;
+    background-color: #161616;
+    padding: 7px;
+    border-radius: 5px;
+}
+
+.top__user .place {
+    border: solid 2px white;
+    padding: 5px;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.top__users {
+    display: grid;
+    gap: 13px;
+}
+
+.home__item .info__user {
+    font-weight: 500;
+    width: 65px;
+}
+
+.home__item .info__user .books, .pages {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+}
+
+.home__item .title {
+    font-weight: 500;
+    font-size: 25px;
+}
+.home__item .logo {
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home__item .logo img {
+    width: 200px;
+    height: 200px;
+}
