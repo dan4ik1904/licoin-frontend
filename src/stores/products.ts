@@ -37,8 +37,10 @@ class ProductStore {
 
     async fetchAllProducts() {
         try {
+            this.isLoading = true
             const products = await getAllProducts()
             this.products = products
+            this.isLoading = false
         } catch (error) {
             
         }

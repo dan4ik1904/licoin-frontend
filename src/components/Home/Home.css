@@ -37,6 +37,23 @@
     border-radius: 5px;
 }
 
+.top__user {
+    display: flex;
+    justify-content: flex-start; /* Измените на flex-start для более естественного выравнивания */
+    align-items: center;
+    padding: 10px; /* Добавьте отступы для улучшения внешнего вида */
+    transition: background-color 0.3s; /* Перенесите transition сюда */
+}
+
+.top__user:hover {
+    background-color: #161616;
+}
+
+.top__user.me {
+    background-color: #181818;
+    border-radius: 7px;
+}
+
 .top__user .place {
     border: solid 2px white;
     padding: 5px;
@@ -46,6 +63,24 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-right: 10px; /* Добавьте отступ справа */
+}
+
+.top__user .name {
+    flex-grow: 1; /* Позволяет этому элементу занимать оставшееся пространство */
+}
+
+.top__user .info__user {
+    display: flex;
+    align-items: center; /* Центрируем содержимое по вертикали */
+}
+
+.home__item .info__user .books,
+.home__item .info__user .pages {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    margin-left: 10px; /* Добавьте отступ слева для разделения */
 }
 
 .top__users {
@@ -58,12 +93,6 @@
     width: 65px;
 }
 
-.home__item .info__user .books, .pages {
-    display: flex;
-    gap: 5px;
-    justify-content: center;
-    align-items: center;
-}
 
 .home__item .title {
     font-weight: 500;

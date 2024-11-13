@@ -7,9 +7,13 @@ export const getAllUsers = async(): Promise<IUser[]> => {
     return res.data
 }
 
-export const getTopUsers = async(): Promise<IUser[]> => {
-    const res = await api.get('/users/top')
-    return res.data
+export const getTopUsers = async (page: number, limit: number): Promise<IUser[]> => {
+    const res = await api.get('/users/top', {
+        params: {
+            page, limit
+        }
+    });
+    return res.data; // Предполагается, что ваш API возвращает пользователей и общее количество
 }
 
 export const getClassmatesUsers = async(tgId: number): Promise<IUser[]> => {

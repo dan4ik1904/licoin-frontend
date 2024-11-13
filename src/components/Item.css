@@ -19,3 +19,9 @@
 .highlight {
     color: #646cff;
 }
+
+.items {
+    display: grid;
+    gap: 15px;
+    margin-bottom: 100px;
+}

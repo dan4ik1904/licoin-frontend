@@ -15,6 +15,7 @@ class UserStore {
     myProduct: IProduct[] | Array<null> = []
     mySessions: ISession[] | Array<null> = []
     classmates: IUser[] | Array<null> = []
+    endFetch = false
 
     constructor() {
         makeAutoObservable(this)
@@ -77,16 +78,32 @@ class UserStore {
         }
     }
 
-    async fetchTopUsers() {
+    async fetchTopUsers(page: number) {
         try {
-            this.isLoading = true
-            const users = await getTopUsers()
-            this.users = users
+            this.isLoading = true;
+            const fetchedUsers = await getTopUsers(page, 6);
+    
             runInAction(() => {
-                this.isLoading = false
-            })
+                if (fetchedUsers.length < 6) {
+                    this.endFetch = true; // Исправлено на присваивание
+                }
+    
+                // Создаем множество идентификаторов уже существующих пользователей
+                const existingUserIds = new Set(this.users.map(user => user.id));
+    
+                // Фильтруем новых пользователей, оставляя только уникальных
+                const uniqueFetchedUsers = fetchedUsers.filter(user => !existingUserIds.has(user.id));
+    
+                // Добавляем уникальных пользователей к существующим
+                this.users = [...this.users, ...uniqueFetchedUsers];
+    
+                this.isLoading = false;
+            });
         } catch (error) {
-            this.error = error
+            this.error = error;
+            runInAction(() => {
+                this.isLoading = false;
+            });
         }
     }
 

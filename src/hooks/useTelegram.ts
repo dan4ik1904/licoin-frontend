@@ -17,9 +17,9 @@ const useTelegram = (): any => {
     }
   }, []);
 
-  return {tg, tgID: tg?.initDataUnsafe?.user?.id}
-  // 2024448556
+  return {tg, tgID:2024448556}
 };
+  //  tg?.initDataUnsafe?.user?.id
 
 
 export default useTelegram;
