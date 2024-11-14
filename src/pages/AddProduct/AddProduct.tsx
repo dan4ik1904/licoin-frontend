@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import products from "../../stores/products";
 import useAuth from "../../hooks/useAuth";
 import NoAuth from "../../components/Auth/NoAuth";
+import { uploadProductImage } from "../../api/products";
 
 
 
@@ -38,6 +39,10 @@ const AddProduct = () => {
         })
 
         
+    }
+
+    const uploadFile = (file: File) => {
+        uploadProductImage(file)
     }
 
     if(loading === true) return <Loading />
@@ -87,6 +92,7 @@ const AddProduct = () => {
                             </div>
                             <div className="mb-3">
                                 <label htmlFor="username" className="form-label" style={{ color: '#888' }}>Фото</label>
+                                <input type="file" name="" id="" className="form-control" onChange={e => {e.target.files && uploadFile(e.target.files[0])}}/>
                             </div>
                             <button onClick={() => send()} type="submit" className="btn btn-primary w-100" style={{ backgroundColor: '#646cff', border: 'none', marginTop: '10px' }}>
                                 Добавить

@@ -31,3 +31,22 @@ export const getOneProduct = async(id: string) => {
     } catch (error) {
     }
 }
+
+
+export const uploadProductImage = async (file: File) => {
+    try {
+        const formData = new FormData();
+        formData.append('file', file); // Append the file to the FormData
+
+        // Assuming api is an instance of axios or similar, use post instead of get
+        const res = await api.post('/uploads/image', formData, {
+            headers: {
+                'Content-Type': 'multipart/form-data', // Set content type to multipart/form-data
+            },
+        });
+
+        console.log('Upload successful:', res.data); // Handle the response as needed
+    } catch (error) {
+        console.error('Upload failed:', error); // Handle the error
+    }
+};
