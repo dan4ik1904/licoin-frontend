@@ -23,6 +23,12 @@
     flex-direction: column; /* Вертикальное расположение текста */
 }
 
+.product .info .img img {
+    height: 90%;
+    width: 90%;
+    border-radius: 5px;
+}
+
 .products .product .name {
     font-weight: bold; /* Жирный шрифт для имени продукта */
     margin-bottom: 5px; /* Отступ между именем и описанием */
@@ -55,4 +61,5 @@
     align-items: center;
     gap: 5px;
 }
+
 

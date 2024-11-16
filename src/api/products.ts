@@ -46,6 +46,7 @@ export const uploadProductImage = async (file: File) => {
         });
 
         console.log('Upload successful:', res.data); // Handle the response as needed
+        return res
     } catch (error) {
         console.error('Upload failed:', error); // Handle the error
     }

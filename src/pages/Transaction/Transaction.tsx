@@ -35,7 +35,7 @@ const Transaction = () => {
     if(loading === true || transactions.isLoading === true) return <Loading />
     if(isAuthenticated === false && loading === false) return <NoAuth />
     return (
-        <>
+        <div className="items">
             {transactions.error && (<div className="error">
                 {transactions?.error}
             </div>)}
@@ -44,8 +44,10 @@ const Transaction = () => {
                 <span>{data?.balance}<SiBitcoinsv color="yellow" fontSize={'23px'}/></span>
             </div>
             {isOpenTransaction === false && (
-                <div className="transaction" onClick={() => toogleTransaction()}>
-                    Перевести
+                <div className="transaction" >
+                    <button onClick={() => toogleTransaction()} type="submit" className="btn btn-primary w-50 h-40" style={{ backgroundColor: '#646cff', border: 'none', marginTop: '10px' }}>
+                                Добавить
+                    </button>
                 </div>
             )}
             {isOpenTransaction === true && (
@@ -89,7 +91,7 @@ const Transaction = () => {
                 </div>
             )}
 
-        </>
+        </div>
         
     )
 }

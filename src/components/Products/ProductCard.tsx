@@ -8,6 +8,9 @@ const ProductCard: FC<{product: IProduct}> = ({ product }) => {
     return (
         <div className="product">
             <div className="info">
+                <div className="img">
+                    <img src={`https://licoin.daniyaldobro.ru/api/v1/uploads/image/${product.img}`} alt="" />
+                </div>
                 <div className="name">
                     {product.name}
                 </div>

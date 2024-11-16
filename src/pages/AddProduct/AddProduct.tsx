@@ -13,7 +13,7 @@ const AddProduct = () => {
     const [name, setName] = useState('')
     const [info, setInfo] = useState('')
     const [price, setPrice] = useState<number>()
-    // const [img, setImg] = useState()
+    const [img, setImg] = useState('')
     const [error, setError] = useState('')
     const [loading, setLoading] = useState(false)
 
@@ -32,7 +32,7 @@ const AddProduct = () => {
             name, 
             info,
             price,
-            img: 'img.png'
+            img
         }, tgID, setLoading)
         .finally(() => {
             navigate('/')
@@ -43,6 +43,13 @@ const AddProduct = () => {
 
     const uploadFile = (file: File) => {
         uploadProductImage(file)
+        .then(res => {
+            if(res?.status === 201) {
+                setImg(res.data.fileName)
+            }else {
+                setError('Ошибка загрузки файла')
+            }
+        })
     }
 
     if(loading === true) return <Loading />
