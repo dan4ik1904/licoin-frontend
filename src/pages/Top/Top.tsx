@@ -43,9 +43,16 @@ const Top: FC = observer(() => {
   return (
     <>
       <div className="users">
-        {users.users.map((user) => (
-          <UserTopCard key={user.id} user={user} />
-        ))}
+        {users.users.length > 0 ? (
+          (users.users.map((user) => (
+            <UserTopCard key={user.id} user={user} />
+          )))
+        ): (
+          <div className="no-items">
+            <h2>Здесь пока ничего нет :(</h2>
+          </div>
+        )}
+        
       </div>
     </>
   );

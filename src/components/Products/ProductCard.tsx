@@ -9,22 +9,15 @@ const ProductCard: FC<{product: IProduct}> = ({ product }) => {
         <div className="product">
             <div className="info">
                 <div className="img">
-                    <img src={`https://licoin.daniyaldobro.ru/api/v1/uploads/image/${product.img}`} alt="" />
+                <img src={`http://localhost:8080/api/v1/uploads/image/${product.img}`} alt={product.name} />
                 </div>
-                <div className="name">
-                    {product.name}
-                </div>
-                <div className="description">
-                    {product.info.slice(0, 20)}...
-                </div>
+                <div className="name">{product.name}</div>
+                <div className="description"><p>{product.info.slice(0, 100)}...</p></div> {/* Increased description length */}
             </div>
             <div className="price">
-                <span>{product.price}<SiBitcoinsv color="yellow" fontSize={'18px'}/></span>
-                <div className="feedback">
-                    Связаться
-                </div>
+                <span>{product.price} <SiBitcoinsv color="yellow" fontSize="18px" /></span>
+                <div className="feedback">Связаться</div>
             </div>
-            
         </div>
     )
 }

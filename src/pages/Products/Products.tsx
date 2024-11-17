@@ -11,12 +11,16 @@ const Products = observer(() => {
 
 
     if (products.isLoading) return <Loading />;
-    if (Array.isArray(products.products) && products.products.length > 0) {
+    if (Array.isArray(products.products) ) {
         return (
             <div className="products items">
-                {products.products.map(product => (
-                    product && <ProductCard key={product.id} product={product} />
-                ))}
+                {products.products.length > 0 ? (
+                    (products.products.map(product => (
+                        product && <ProductCard key={product.id} product={product} />
+                    )))
+                ): (
+                    <h2>Здесь пока ничего нет :(</h2>
+                )}
             </div>
         );
     }

@@ -16,7 +16,7 @@ const TopFive = observer(({ users, title }: IProps) => {
             {title}
         </div>
         <div className="top__users">
-            {users ? (
+            {users.length > 0 ? (
                 <>{users.slice(0, 5).map((user, key) => (
                     <div className="top__user">
                         <div className="place">
@@ -34,7 +34,7 @@ const TopFive = observer(({ users, title }: IProps) => {
                     </div>
                 ))}</>
             ) : (
-                <>Loading</>
+                <h5>Здесь пока никого нет :(</h5>
             )}
         </div>
     </div>

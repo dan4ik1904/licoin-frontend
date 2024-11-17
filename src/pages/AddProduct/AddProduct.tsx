@@ -27,7 +27,7 @@ const AddProduct = () => {
     }
 
     const send = async() => {
-        if(!name || !info || !price) return setError('Введите коректные данные')
+        if(!name || !info || !price || !img) return setError('Введите коректные данные')
         products.createProduct({
             name, 
             info,

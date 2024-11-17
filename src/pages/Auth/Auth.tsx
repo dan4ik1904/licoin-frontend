@@ -185,7 +185,7 @@ const Auth: React.FC = observer(() => {
                                 </div>
                             )}
                             
-                            {students.length > 0 &&  (
+                            {students.length > 0 && role=='Ученик' &&  (
                                 <div className="mb-3">
                                     <label htmlFor="email" className="form-label" style={{ color: '#888' }}>Выберите имя</label>
                                     <CustomSelectArray options={students} onChange={setUsername} placeholder='Имя'/>

@@ -1,3 +1,17 @@
+.home__items {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.home__items .logo {
+    height: 200px;
+}
+
+.home__items .logo img {
+    height: 150px;
+}
+
 .home__item {
     background-color: #1d1d1d;
     border-radius: 11px;
